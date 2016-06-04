@@ -623,7 +623,6 @@ div#comments{
 
 #comment-form {
     padding-top: 15px;
-    white-space: nowrap;
 }
 
 button,html input[type=button],input[type=reset],input[type=submit] {
@@ -879,6 +878,9 @@ div#body-bottom {
     #comments #author,#comments #mail,#comments #url {
         width: 32.9%;
     }
+    #comment-form {
+        white-space: nowrap;
+    }
 }
 @media(max-width:992px) {
     #comments input {
@@ -887,6 +889,9 @@ div#body-bottom {
     }
     #comments #author,#comments #mail {
         width: 49.6%
+    }
+    #comment-form {
+        white-space: normal;
     }
     #comments #url{
         width: 100%
@@ -921,7 +926,9 @@ div#body-bottom {
     #comments input {
         width: auto
     }
-
+    #comment-form {
+        white-space: nowrap;
+    }
     #comments #author,#comments #mail,#comments #url {
         width: 32.89%;
     }
@@ -933,6 +940,9 @@ div#body-bottom {
 @media(max-width:610px) {
     #comments #author,#comments #mail,#comments #url {
         width: 100%
+    }
+    #comment-form {
+        white-space: normal;
     }
 }
 .post-content {
