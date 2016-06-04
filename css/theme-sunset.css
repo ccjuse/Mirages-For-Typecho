@@ -1,0 +1,94 @@
+body {
+    color: #333;
+}
+#body {
+    background-color: #f8f2e3 !important;
+}
+#wrap {
+    background-color: #f8f2e3;
+}
+#index .post, #archive .post {
+    background-color: #f8f2e3;
+}
+
+#index article,#archive article {
+    border-bottom-color: #d6d0c1;
+}
+.post-content h1, .post-content h2 {
+    border-bottom-color: #e7e1d2;
+}
+.post-meta a,.post-content a,.widget a,.comment-content a {
+    border-bottom-color: #e7e1d2;
+}
+#index .more>a,#archive .more>a{
+    border-color: #d6d0c1;
+}
+#footer a:after,#header .nav li a:after,#post .post-meta a:after,#index .comments a:after,#post .post-content a:after{
+    border-bottom-color: #333;
+}
+
+.post-content code {
+    background-color: #fff9ea;
+}
+.post-content .highlight pre,.post-content pre {
+    background-color: #fff9ea;
+}
+#index .page-navigator li a,#archive .page-navigator li a{
+    color: #333;
+    border-color: #d6d0c1;
+
+}
+#index .page-navigator li a:hover,#archive .page-navigator li a:hover {
+    background: #fff9ea;
+}
+#bottom-msg {
+    background-color: #fdf7e8;
+}
+a#toggle-nav{
+    background-color: rgba(248,242,227,.85);
+    border-color: #d6d0c1;
+}
+.archives a:hover {
+    background: #fff9ea !important;
+}
+.post-content table th,.post-content table td {
+    border-color: #e7e1d2;
+}
+.post-content table tr {
+    background-color: #f8f2e3;
+}
+.post-content table tr:nth-child(2n) {
+    background-color: #fff9ea
+}
+.post-content table thead>tr{
+    background-color: #fff9ea
+}
+.post-content hr {
+    background-color: #e7e1d2;
+}
+.post-content blockquote {
+    border-left-color: #1abc9c;
+    color: #888;
+    background-color: #fff9ea;
+}
+.github-box {
+    border-color: #d6d0c1 !important;
+}
+.github-box .github-box-title{
+    background: #fff9ea !important;
+    border-color: #d6d0c1 !important;
+}
+.github-box .github-box-content{
+    background: #f8f2e3;
+}
+.github-box .github-box-download{
+    border-color: #d6d0c1 !important;
+    background: #f8f2e3 !important;
+}
+
+.github-stats a, .github-widget a.download{
+    border: 1px solid #d6d0c1 !important;
+}
+.github-box .github-box-download .download{
+    background: #f8f2e3 !important;
+}

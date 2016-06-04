@@ -1,0 +1,128 @@
+body{
+    color: #CCC;
+}
+#body {
+    background-color: #3c3c3c !important;
+}
+#masthead {
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.7);
+}
+#wrap {
+    background-color: #3c3c3c;
+}
+#index .post-content a:not(.no-icon), #archive .post-content a:not(.no-icon),#post .post-content a:not(.no-icon) {
+     color: #1abc9c;
+}
+#index .post, #archive .post {
+    background-color: #3c3c3c;
+}
+#index .post .post-title,#archive .post .post-title, #post .post-title a {
+    color: #bcbcbc;
+}
+#index article,#archive article {
+    border-bottom-color: #5e5e5e;
+}
+.post-content h1, .post-content h2 {
+    border-bottom-color: #4d4d4d;
+}
+.post-meta a,.post-content a,.widget a,.comment-content a {
+    border-bottom-color: #4d4d4d;
+}
+#index .more>a,#archive .more>a{
+    border-color: #5f5f5f;
+    color: #999 !important;
+}
+#index .page-navigator li a:hover,#archive .page-navigator li a:hover {
+    background: #474747;
+}
+#index .page-navigator li a,#archive .page-navigator li a {
+    color: #bcbcbc;
+}
+.post-content {
+    color: #bcbcbc;
+}
+.post-content code {
+    background-color: rgba(255,255,255,0.04);
+}
+.post-content .highlight pre,.post-content pre {
+    background-color: #474747;
+}
+@media screen and (min-width: 768px){
+    .img-box {
+        background-color: #474747;
+    }
+}
+
+#post article a {
+    color: #bcbcbc;
+}
+#bottom-msg {
+    background-color: #373737;
+}
+a#toggle-nav{
+    background-color: rgba(60,60,60,1);
+    /*border-color: #6a6a6a;*/
+}
+#links a {
+    background: #404040;
+    color: #aeaeae;
+}
+#links a .thumb {
+    background-color: #404040;
+}
+.archives a {
+    color: #bcbcbc !important;
+}
+.archives a:hover {
+    background: #4d4d4d !important;
+}
+.post-content table th,.post-content table td {
+    border-color: #5f5f5f;
+}
+.post-content table tr {
+    /*border-top-color: #ccc;*/
+    background-color: #3c3c3c;
+}
+.post-content table tr:nth-child(2n) {
+    background-color: #4c4c4c
+}
+.post-content table thead>tr{
+    background-color: #4c4c4c
+}
+.post-content hr {
+    background-color: #4f4f4f;
+}
+.post-content blockquote {
+    border-left-color: #5f5f5f;
+    color: #888;
+    background-color: #404040;
+}
+
+.github-box {
+    border-color: #5e5e5e !important;
+    background-color: #4d4d4d !important;
+}
+.github-box .github-box-title{
+    background: #4d4d4d !important;
+    border-color: #5e5e5e !important;
+}
+.github-box .github-box-content{
+    background: #3c3c3c;
+}
+.github-box .github-box-download{
+    border-color: #5e5e5e !important;
+    background: #3c3c3c !important;
+}
+.github-box .github-box-download .updated strong{
+    color: #bcbcbc !important;
+}
+.github-stats a, .github-widget a.download{
+    border: 1px solid #5e5e5e !important;
+}
+.github-box .github-box-download .download{
+    background: #3c3c3c !important;
+}
+.zoom-overlay {
+    background-color: #3c3c3c !important;
+}
