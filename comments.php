@@ -76,7 +76,7 @@
                             <p>登录为 <a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a></p>
                         <?php else: ?>
                             <input type="text" name="author" id="author" placeholder="称呼" value="<?php $this->remember('author'); ?>" />
-                            <input type="text" name="mail" id="mail" placeholder="电子邮件" value="<?php $this->remember('mail'); ?>" />
+                            <input type="email" name="mail" id="mail" placeholder="电子邮件" value="<?php $this->remember('mail'); ?>" />
                             <input type="text" name="url" id="url" placeholder="网站"  value="<?php $this->remember('url'); ?>" />
                         <?php endif; ?>
                         <p>

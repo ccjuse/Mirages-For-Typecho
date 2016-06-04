@@ -1,23 +1,4 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php
-$fullURL = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-$requestURI = $_SERVER['REQUEST_URI'];
-$requestURIArray = explode('?', $requestURI);
-$requestURI = $requestURIArray[0];
-
-if (preg_match('/^\/([^\/]+)\/([^\/]+).html$/i', $requestURI, $matches)) {
-    if ($matches[1] == "archives") {
-
-    } else {
-        $redirectURL = '//'.$_SERVER['HTTP_HOST'].'/archives/'.$matches[2].'.html';
-        if (!empty($_SERVER['QUERY_STRING'])) {
-            $redirectURL = $redirectURL.'?'.$_SERVER['QUERY_STRING'];
-        }
-        header("Location: ".$redirectURL);
-        exit;
-    }
-}
-?>
 <!DOCTYPE HTML>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
