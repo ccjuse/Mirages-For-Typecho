@@ -193,46 +193,6 @@ div.x-goto-top div.x-stick {
     transition: width 350ms
 }
 
-/*#header {*/
-    /*padding-top: 10px;*/
-    /*border-bottom: 1px solid #EEE;*/
-    /*text-align: center*/
-/*}*/
-
-
-/*#header .avatar:hover {*/
-    /*box-shadow: 0 0 10px #fff;*/
-    /*-webkit-transform: rotateZ(720deg);*/
-    /*-moz-transform: rotateZ(720deg);*/
-    /*rgba(255,255,255,.6),inset 0 0 20px rgba(255,255,255,1);-webkit-box-shadow: 0 0 10px #fff;*/
-    /*rgba(255,255,255,.6),inset 0 0 20px rgba(255,255,255,1);transform: rotateZ(720deg)*/
-/*}*/
-
-/*#header .description {*/
-    /*margin-top: 15px*/
-/*}*/
-
-/*#header .nav {*/
-    /*margin: 15px 0 10px 0;*/
-    /*width: 100%*/
-/*}*/
-
-/*#header .nav ul {*/
-    /*padding: 0;*/
-    /*text-align: center*/
-/*}*/
-
-/*#header .nav li {*/
-    /*display: inline-block;*/
-    /*margin: 0 10px 0 10px*/
-/*}*/
-
-/*#header .nav li a {*/
-    /*color: #999;*/
-    /*text-decoration: none;*/
-    /*font-size: 1.143em*/
-/*}*/
-
 #wrap {
     min-height: 100%;
     transition: .5s;
@@ -242,7 +202,6 @@ div.x-goto-top div.x-stick {
     -webkit-transform-origin: bottom;
     transform-origin: bottom;
     background-color: #fff;
-    margin-right: -4px;
 }
 
 #body {
@@ -253,7 +212,7 @@ div.x-goto-top div.x-stick {
     padding: 16px 7px 6px
 }
 #post-f{
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 #index {
     padding: 36px 10px 6px
@@ -431,10 +390,20 @@ div.x-goto-top div.x-stick {
 }
 
 #archive .archive-title {
-    margin-top: 15px;
+     margin-top: 15px;
+     text-align: center;
+     font-weight: 300;
+     font-size: 3em;
+}
+@media screen and (max-width: 374px) {
+    #archive .archive-title {
+        font-size: 2.4em;
+    }
+}
+
+#archive .no-content {
     text-align: center;
-    font-weight: 300;
-    font-size: 3em;
+    margin-top: 20vh;
 }
 
 #index .subhead {
@@ -821,6 +790,7 @@ p>input#submit:hover {
     color: #ccc;
     text-align: center;
     padding: 10px 0;
+    background-color: #2c2a2c;
 }
 
 #footer a {
@@ -1917,6 +1887,10 @@ a#toggle-nav.hide{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+}
+.link-box a:after {
+    border-bottom: none !important;
 }
 .link-box a .thumb {
     font-size: 0;
@@ -1941,6 +1915,7 @@ a#toggle-nav.hide{
     letter-spacing: -1.5px;
     margin: 0;
     padding: 0;
+    color: #2E2E2E;
 }
 .link-box a .content {
     text-align: center;

@@ -141,9 +141,6 @@
     html, body, div, p, ol, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td, blockquote, img{
         -webkit-font-smoothing: auto !important;
     }
-    #wrap{
-        margin-right: 0;
-    }
     #backtop.show {
         opacity: 0;
         display: none;
@@ -214,20 +211,6 @@
         font-size: 13px;
     }
 <?php endif?>
-<?php if(isset($this->fields->hideBottomMsg) && $this->fields->hideBottomMsg > 0):?>
-    #bottom-msg{
-        padding: 0;
-    }
-    .blog-background {
-        background-attachment: local!important;
-    }
-    .post-content pre>code{
-        font-size: 1em;
-    }
-    .post-content code{
-        font-size: .85em;
-    }
-<?php endif?>
 <?php if(shouldEnableBlurFilter()):?>
     #wrap.display-nav #body {
         -webkit-filter: blur(10px);
@@ -244,9 +227,6 @@
 
 <?php if(isSafari()):?>
     /*Safari*/
-    #wrap {
-        margin-right: 0;
-    }
 <?php else:?>
     /*Not Safari*/
     /*
@@ -254,7 +234,7 @@
     */
     ::-webkit-scrollbar {
         height:8px;
-        width:4px;
+        width:6px;
     }
     ::-webkit-scrollbar-button {
         height:0;
@@ -316,7 +296,6 @@
         .post-content p {
             font-size: 1.13em;
             letter-spacing: 1.5px;
-            /*font-weight: 300;*/
         }
         #index .more>a, #archive .more>a {
             width: 220px;
@@ -401,10 +380,6 @@
 </style>
 <style type="text/css">
     /** 页面样式调整 */
-    #wrap {
-        height: auto !important;
-        height: 100%;
-    }
 <?php if($this->is('post')):?>
     div#comments{
         margin-top: 0;
@@ -412,34 +387,18 @@
 <?php endif?>
 <?php if($this->is('page','about')):?>
     .post-content{
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 30px;
         font-size: 1.117em;
     }
 <?php endif ?>
 <?php if($this->is('page','links')): ?>
-    /*#body{*/
-        /*background-color: #f7f7f7;*/
-    /*}*/
     #wrap {
-        min-height: 100%;
-        /*max-width: 100%;*/
-        height: auto !important;
-        height: 100%;
-        /*margin: 0 auto -40px;*/
-        /*padding: 0 0 40px;*/
         color: #1abc9c;
         font-size: 1.071em;
         font-weight: 300;
     }
     #body .container {
         margin-top: 50px;
-    }
-    @media screen and (max-width: 480px) {
-        #wrap-f {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
     }
     .row{
         margin-left: 0;
@@ -450,7 +409,10 @@
     #footer{
         height: auto;
         padding: 20px 0;
-        margin: 0;
+        margin-top: -81px;
+    }
+    #body .container {
+        padding-bottom: 81px;
     }
 <?php endif?>
 <?php if(isset($this->fields->contentWidth) && intval($this->fields->contentWidth >= 400)):?>

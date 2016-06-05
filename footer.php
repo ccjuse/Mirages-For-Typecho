@@ -17,16 +17,15 @@
     <?php $this->need('comments.php'); ?>
 </div>
 <?php endif?>
-
+</div>
+</div><!-- end #body -->
+</div><!-- end #wrap -->
 <footer id="footer" role="contentinfo">
     <div class="container">
         <p>Copyright &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a> • All Rights Reserved.</p>
         <p><?php _e('Powered By <a href="http://www.typecho.org">Typecho</a>'); ?> • Theme <a href="http://hran.me/mirages.html">Mirages</a></p>
     </div>
 </footer><!-- end #footer -->
-</div>
-</div><!-- end #body -->
-</div><!-- end #wrap -->
 <?php $this->footer(); ?>
 <script type="text/javascript">NProgress.inc(0.8);</script>
 <script src="//cdn.bootcss.com/github-repo-widget/e23d85ab8f/jquery.githubRepoWidget.min.js" type="text/javascript"></script>

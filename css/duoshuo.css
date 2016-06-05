@@ -1,3 +1,12 @@
+#ds-thread #ds-reset a.ds-user-name[data-user-id='11784750']:after {
+	content: "博主";
+	margin-left: 6px;
+	font-size: 12px;
+	color: #fff;
+	background: rgba(255, 255, 255, .35);
+	border-radius: 4px;
+	padding: 0 3px;
+}
 #ds-thread #ds-reset a.ds-like-thread-button {
 	border: 1px solid #1abc9c;
 	border-radius: 20px;
@@ -381,6 +390,7 @@ input#ds-sync-checkbox-inline {
 
 
 #ds-thread #ds-reset .ds-user-name {
+	color: #1abc9c;
 	font-weight: 700;
     font-family: initial;
 }

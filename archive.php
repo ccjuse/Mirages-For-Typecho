@@ -26,7 +26,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
     	<?php endwhile; ?>
         <?php else: ?>
             <article class="post">
-                <h2 class="post-title"><?php _e('没有找到内容'); ?></h2>
+                <h2 class="post-title no-content"><?php _e('没有找到内容'); ?></h2>
             </article>
         <?php endif; ?>
 
