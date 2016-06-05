@@ -2055,9 +2055,7 @@ a#toggle-nav.hide{
     border-color: #1abc9c !important;
     background-color: rgba(24,188,156,0.4) !important;
 }
-.MathJax_Display {
-    overflow-x: scroll;
-}
+
 @media print {
     body {
         font-size: 75%;
