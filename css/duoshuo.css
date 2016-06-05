@@ -1,4 +1,4 @@
-#ds-thread #ds-reset a.ds-user-name[data-user-id='11784750']:after {
+#ds-thread #ds-reset a.ds-user-name[data-user-id='0']:after {
 	content: "博主";
 	margin-left: 6px;
 	font-size: 12px;

@@ -1,4 +1,4 @@
-> # Mirages v1.1.2
+> # Mirages
 
 示例：[Mirages](https://hran.me/mirages.html)
 
@@ -20,6 +20,14 @@
 
 ## 更新
 
+### 2016-06-05 日更新
+
+- 修复了部分样式问题
+
+- 更新duoshuo.css, 添加博主标识
+  
+  你需要到duoshuo.css文件里，修改第一行中的`[data-user-id='0']:after` 中的`user-id`为你自己的User ID。
+  
 ### 2016-05-28 日更新
 
 - 添加了多说评论的支持
