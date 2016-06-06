@@ -7,6 +7,7 @@
 a{
     outline: none !important;
     text-decoration: none !important;
+    color: #1abc9c;
 }
 .container,.row [class*="col-"] {
     -webkit-box-sizing: border-box;
@@ -121,6 +122,25 @@ body {
 
 .post-meta a:hover,.post-content a:hover,.widget a:hover,.comment-content a:hover {
     border-bottom-color: transparent
+}
+.post-meta .edit {
+    float: right;
+}
+
+h1> .superscript {
+    font-size: 0.35em !important;
+    position: absolute;
+    padding-left: 7px;
+    padding-top: 3px;
+    color: inherit !important;;
+}
+
+h2> .superscript {
+    font-size: 0.45em !important;;
+    position: absolute;
+    padding-left: 7px;
+    padding-top: 3px;
+    color: inherit !important;;
 }
 
 .browsehappy {
@@ -482,9 +502,10 @@ div.x-goto-top div.x-stick {
     font-size: 2.857em;
 }
 
-#post .post-title a {
+#post .post-title a, #post h1.post-title, #post h2.post-title {
     color: #333;
 }
+
 
 #post .post-meta {
     padding: 0;

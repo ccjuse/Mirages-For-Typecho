@@ -47,10 +47,19 @@
                         <div id="about-avatar">
                             <img class="rotate" src="<?php $this->options->sideMenuAvatar(); ?>" alt="Avatar" width="200" height="200"/>
                         </div>
-                        <h1 class="blog-title light" itemprop="name"><?php $this->author(); ?></h1>
+                        <h1 class="blog-title light" itemprop="name"><?php $this->author(); ?>
+                            <?php if($this->user->hasLogin()):?>
+                                <a class="superscript" href="<?php $this->options->rootUrl();?>/<?=isset($this->options->adminDir) ? trim($this->options->adminDir, '/') : "admin";?>/write-page.php?cid=<?=$this->cid?>" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                            <?php endif?>
+                        </h1>
                         <h2 class="blog-description light bordered bordered-top" itemprop="description"><?=$this->fields->description?></h2>
                     <?php elseif($this->is('page','links')):?>
-                        <h1 class="blog-title light" itemprop="name">Links</h1>
+                        <h1 class="blog-title light" itemprop="name">Links
+                            <?php if($this->user->hasLogin()):?>
+                                <a class="superscript" href="<?php $this->options->rootUrl();?>/<?=isset($this->options->adminDir) ? trim($this->options->adminDir, '/') : "admin";?>/write-page.php?cid=<?=$this->cid?>" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                            <?php endif?>
+                        </h1>
+
                     <?php elseif($this->is('index')):?>
                     <?php else: ?>
                         <h1 class="blog-title light" style="<?php if (isset($this->fields->mastheadTitleColor)) echo "color: ".$this->fields->mastheadTitleColor.";" ?>" itemprop="name"><?php if (isset($this->fields->mastheadTitle)) echo $this->fields->mastheadTitle ?></h1>
