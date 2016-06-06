@@ -17,7 +17,7 @@ body{
 #index .post, #archive .post {
     background-color: #3c3c3c;
 }
-#index .post .post-title,#archive .post .post-title, #post .post-title a {
+#index .post .post-title,#archive .post .post-title, #post .post-title a, #post h1.post-title, #post h2.post-title {
     color: #bcbcbc;
 }
 #index article,#archive article {
