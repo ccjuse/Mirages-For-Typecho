@@ -158,7 +158,7 @@ function loadArchiveBanner($that) {
         if (isset($that->fields->banner)) {
             return $that->fields->banner;
         } else {
-            return $that->options->defaultBg;
+            return "";
         }
     } else {
         $cids = array();
@@ -272,6 +272,10 @@ function renderCards($content) {
         }
         $linkGroupHtml .= '</div>';
         $output .= $linkGroupHtml;
+    }
+
+    if ($currentGroupId < 1) {
+        return $content;
     }
 
     $output .= substr($content, $linkGroupEndIndex[$currentGroupId]);
