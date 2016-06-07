@@ -110,15 +110,14 @@
             $(this).attr('src', src + addon);
             $(this).removeAttr('data-src');
         }
+    });
+    <?php endif?>
+    $("article img:not(article .link-box img)").each(function() {
         $(this).attr('data-action', 'zoom');
         if($(this).next().is('br')){
             $(this).next().remove();
         }
     });
-    $("article .link-box img").each(function() {
-        $(this).removeAttr('data-action');
-    });
-    <?php endif?>
     String.prototype.startWith = function(str){
         if (str == null || str == "" || this.length == 0 || str.length > this.length) {
             return false;
