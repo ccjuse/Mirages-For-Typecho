@@ -394,7 +394,6 @@ input#ds-sync-checkbox-inline {
 #ds-thread #ds-reset .ds-user-name {
 	color: #1abc9c;
 	font-weight: 700;
-    font-family: initial;
 }
 #ds-thread #ds-reset .ds-sort a {
 	color: #ccc;
