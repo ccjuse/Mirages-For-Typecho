@@ -43,7 +43,7 @@
                         var ds = document.createElement('script');
                         ds.type = 'text/javascript';ds.async = true;
                         <?php if(strlen($this->options->duoshuoCustomEmbedJs) > 0):?>
-                        ds.src = "<?=(startsWith($this->options->duoshuoCustomEmbedJs, 'http://') || startsWith($this->options->duoshuoCustomEmbedJs, 'https://')) ? $this->options->duoshuoCustomEmbedJs : '//'.$this->options->duoshuoCustomEmbedJs ?>";
+                        ds.src = "<?=(startsWith($this->options->duoshuoCustomEmbedJs, 'http://') || startsWith($this->options->duoshuoCustomEmbedJs, 'https://') || startsWith($this->options->duoshuoCustomEmbedJs, '//')) ? $this->options->duoshuoCustomEmbedJs : '//'.$this->options->duoshuoCustomEmbedJs ?>";
                         <?php else:?>
                         ds.src = '//static.duoshuo.com/embed.js';
                         <?php endif;?>
