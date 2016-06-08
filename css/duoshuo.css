@@ -153,7 +153,6 @@
 #ds-thread #ds-reset .ds-google {
 	display: inline-block;
     background: 0;
-	color: #fff;
 }
 #ds-thread #ds-reset .ds-login-buttons .ds-service-link:before {
 	font: normal normal normal 14px/1 FontAwesome;
@@ -219,6 +218,9 @@
 #ds-thread #ds-reset .ds-like-tooltip {
 	color: #555;
 }
+#ds-thread #ds-reset .ds-like-tooltip li {
+	width: 120px;
+}
 #ds-thread #ds-reset .ds-like-tooltip .ds-service-link:before {
 	margin-right: 5px;
 }
@@ -226,7 +228,7 @@
 #ds-thread #ds-reset .ds-login-buttons .ds-service-link {
 	padding-left: 0;
 }
-#ds-thread #ds-reset .ds-login-buttons .ds-more-services {
+#ds-thread #ds-reset .ds-login-buttons a, #ds-thread #ds-reset .ds-login-buttons .ds-more-services {
 	color: #fff !important;
 }
 #ds-thread #ds-reset .ds-login-buttons .ds-more-services:hover {
@@ -495,4 +497,96 @@ input#ds-sync-checkbox-inline {
     border: 1px solid #fff;
     -webkit-animation: fa-spin 2s infinite linear;
     animation: fa-spin 2s infinite linear;
+}
+#ds-thread #ds-reset a.ds-unread-comments-count {
+	background-color: #1abc9c;
+}
+#ds-notify {
+	border: none;
+    box-shadow: 2px 11px 22px rgba(0, 0, 0, 0.27);
+    -webkit-box-shadow: 2px 11px 22px rgba(0, 0, 0, 0.27);
+	padding: 18px 22px;
+	width: 200px;
+	text-align: center;
+	max-width: 250px;
+}
+#ds-notify #ds-reset {
+	text-align: center;
+}
+#ds-notify #ds-reset a.ds-logo {
+	vertical-align: middle;
+	display: inline-block;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+#ds-notify #ds-reset ul.ds-notify-unread {
+	margin: 0 0 0 6px;
+}
+#ds-notify #ds-reset ul.ds-notify-unread li a {
+	color: #2e2e2e;
+}
+#ds-wrapper #ds-reset .ds-dialog-inner {
+	border: none;
+	-webkit-box-shadow: 0 16px 42px rgba(0, 0, 0, 0.42);
+	
+	box-shadow: 0 16px 42px rgba(0, 0, 0, 0.42);
+	background: #fff;
+}
+#ds-reset .ds-rounded {
+	border-radius: 5px;
+}
+#ds-wrapper #ds-reset .ds-dialog-body {
+	padding: 40px 40px 15px;
+}
+#ds-wrapper #ds-reset h2 {
+	font-size: 22px;
+}
+#ds-wrapper #ds-reset .ds-unread-list li {
+	font-size: 14px;
+	border-top: none;
+}
+#ds-wrapper #ds-reset .ds-unread-list li a {
+	color: #1abc9c;
+}
+
+#ds-wrapper #ds-reset .ds-dialog-footer {
+	border-top: none; 
+	padding: 15px 40px 10px;
+	background-color: #fafafa;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+#ds-wrapper #ds-reset .ds-dialog-close {
+	bottom: 10px;
+	right: 10px;
+	background: none;
+	text-align: center;
+	width: 20px;
+	height: 20px;
+}
+#ds-wrapper #ds-reset .ds-dialog-close:before {
+	content: '\f00d';
+	font: normal normal normal 13px/1 FontAwesome;
+}
+
+@media screen and (min-device-pixel-ratio:  1.5){
+    #ds-wrapper #ds-reset h2 {
+		font-weight: 300;
+	}
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5){
+    #ds-wrapper #ds-reset h2 {
+    	font-weight: 300;
+	}
+}
+@media screen and (-o-min-device-pixel-ratio: 1.5/1.5){
+    #ds-wrapper #ds-reset h2 {
+		font-weight: 300;
+	}
+}
+@media screen and (min--moz-device-pixel-ratio: 1.5){
+    #ds-wrapper #ds-reset h2 {
+		font-weight: 300;
+	}
 }
