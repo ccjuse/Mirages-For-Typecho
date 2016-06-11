@@ -5,19 +5,36 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <?php
-        if (strlen($this->options->staticPath) > 0){
-            define("STATIC_PATH", rtrim($this->options->staticPath,'/').'/');
-        }else {
-            define("STATIC_PATH", $this->options->rootUrl."/usr/themes/Mirages/");
-        }
-    ?>
-    <?php $this->need('head.php');?>
-    <?php $this->need('headfix.php');?>
-    <?php $showBanner = (strlen($this->banner) > 5);?>
-</head>
-<body>
+<?php
+    define("THEME_MIRAGES", 0);
+    define("THEME_MIRAGES_WHITE", 1);
+    define("THEME_MIRAGES_DARK", 2);
+    if (strlen($this->options->staticPath) > 0){
+        define("STATIC_PATH", rtrim($this->options->staticPath,'/').'/');
+    }else {
+        define("STATIC_PATH", $this->options->rootUrl."/usr/themes/Mirages/");
+    }
 
+    if ($this->options->baseTheme == THEME_MIRAGES) {
+        define("THEME_CLASS", "");
+    } elseif ($this->options->baseTheme == THEME_MIRAGES_WHITE) {
+        define("THEME_CLASS", "theme-white");
+    } elseif ($this->options->baseTheme == THEME_MIRAGES_DARK) {
+        define("THEME_CLASS", "theme-dark");
+    }
+    $this->need('head.php');
+    $this->need('headfix.php');
+    $showBanner = (strlen($this->banner) > 5);
+?>
+</head>
+<body class="<?=THEME_CLASS?>">
+<?php if($this->options->disableAutoNightTheme <= 0 && !hasValue($this->options->disqusShortName) && THEME_CLASS != "theme-dark"):?>
+    <script>
+        if (USE_MIRAGES_DARK) {
+            $('body').removeClass("theme-white").addClass("theme-dark");
+        }
+    </script>
+<?php endif?>
 <!--[if lt IE 9]>
 <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->

@@ -1,3 +1,4 @@
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <a id="toggle-nav"><i class="fa fa-bars"></i></a>
 <div id="canvas">
     <div id="nav">

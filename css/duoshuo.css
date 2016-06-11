@@ -1,16 +1,8 @@
-#ds-thread #ds-reset a.ds-user-name[data-user-id='0']:after {
-	content: "博主";
-	margin-left: 6px;
-	font-size: 12px;
-	color: #fff;
-	background: rgba(255, 255, 255, .35);
-	border-radius: 4px;
-	padding: 0 3px;
-}
 #ds-thread #ds-reset a.ds-like-thread-button {
 	border: 1px solid #1abc9c;
+	box-shadow: none;
 	border-radius: 20px;
-	text-shadow: 0 0;
+	text-shadow: none;
 	background-color: #2C2A2A;
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2C2A2A), color-stop(100%, #2C2A2A), to(#2C2A2A));
     background-image: -webkit-linear-gradient(#2C2A2A, #2C2A2A 100%, #2C2A2A);
@@ -91,21 +83,25 @@
 }
 
 #ds-thread #ds-reset .ds-textarea-wrapper {
-	border-color: #3f3e3d;
-    background-color: #3f3e3d;
+	border: none;
+	background: #3f3e3d;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 #ds-reset .ds-gradient-bg {
-	background-color: #3f3e3d;
+	background: #3f3e3d;
 }
-
+#ds-thread #ds-reset .ds-post-toolbar {
+	box-shadow: none;
+}
 #ds-thread #ds-reset .ds-post-toolbar .ds-post-options {
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	margin-right: 0;
+	border: none;
 }
+
 #ds-thread #ds-reset .ds-post-toolbar .ds-post-options .ds-sync label {
 	color: #fff;
 }
@@ -115,6 +111,7 @@
 
 #ds-thread #ds-reset .ds-post-button {
 	box-shadow: none;
+	text-shadow: none;
 	position: inherit;
 	font-family: inherit;
 	margin-top: 10px;
@@ -123,7 +120,7 @@
     border: 1px solid #c8c8c8;
     color: #fff;
     height: 35px;
-    background-color: #2C2A2A;
+    background: #2C2A2A;
 }
 #ds-thread.ds-narrow #ds-reset .ds-post-button {
 	width: 100%;
@@ -134,8 +131,6 @@
 	background-color: rgba(24, 188, 156, 0.5);
 	transition: all 350ms;
 }
-
-
 #ds-thread #ds-reset .ds-icon-settings {
 	display: inline-block;
     height: 14px;
@@ -332,12 +327,14 @@ input#ds-sync-checkbox-inline {
 	border-bottom: 2px solid rgba(255,255,255,0.08);
 	font-size: 15px;
     font-weight: 500;
+	padding: 8px 0 0 0;
 }
 #ds-thread #ds-reset .ds-comment-body p {
 	font-size: 15px;
 }
 #ds-thread #ds-reset .ds-post-self {
 	padding: 20px 0;
+    border-top: none;
 }
 #ds-thread #ds-reset ul.ds-children {
 	margin-left: 60px;
@@ -381,9 +378,13 @@ input#ds-sync-checkbox-inline {
     color: #fff;
     border-bottom: 4px solid #1abc9c;
     border-radius: 0;
+	border-top: none;
+	border-left: none;
+	border-right: none;
 }
 #ds-thread #ds-reset li.ds-tab a {
 	padding-bottom: 3px;
+	text-shadow: none;
 }
 #ds-thread #ds-reset .ds-sort a.ds-current, #ds-thread #ds-reset .ds-sort a:active {
     color: #fff;
@@ -415,6 +416,8 @@ input#ds-sync-checkbox-inline {
 }
 #ds-thread #ds-reset #ds-hot-posts {
 	border: none;
+	margin: 0;
+	border-radius: 0;
 }
 #ds-thread #ds-reset .ds-header {
 	color: #fff;
@@ -426,6 +429,7 @@ input#ds-sync-checkbox-inline {
 
 #ds-reset .ds-avatar {
 	background-color: #2C2A2A;
+    box-shadow: none;
 }
 #ds-reset .ds-avatar img {
 	border-radius: 50px;
@@ -537,6 +541,7 @@ input#ds-sync-checkbox-inline {
 }
 #ds-wrapper #ds-reset .ds-dialog-body {
 	padding: 40px 40px 15px;
+	background: #fff;
 }
 #ds-wrapper #ds-reset h2 {
 	font-size: 22px;
@@ -589,3 +594,112 @@ input#ds-sync-checkbox-inline {
 		font-weight: 300;
 	}
 }
+
+/* Theme White Start */
+body.theme-white #ds-thread #ds-reset a.ds-like-thread-button {
+    background-color: #fff;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), color-stop(100%, #fff), to(#fff));
+    background-image: -webkit-linear-gradient(#fff, #fff 100%, #fff);
+    background-image: -moz-linear-gradient(top, #fff, #fff 100%, #fff);
+    background-image: -ms-linear-gradient(#fff, #fff 100%, #fff);
+    background-image: linear-gradient(#fff, #fff 100%, #fff);
+}
+body.theme-white #ds-thread #ds-reset a.ds-like-thread-button span {
+    color: #333;
+}
+body.theme-white #ds-reset, #ds-related-reads {
+    color: #191919;
+}
+body.theme-white #ds-thread #ds-reset .ds-meta {
+    border-bottom: 2px solid rgba(0,0,0,0.04);
+}
+body.theme-white #ds-thread #ds-reset .ds-toolbar a.ds-visitor-name{
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset .ds-account-control span {
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset .ds-account-control ul li a {
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset .ds-textarea-wrapper {
+    background: rgba(0,0,0,0.04);
+}
+body.theme-white #ds-reset .ds-gradient-bg {
+    background: rgba(0,0,0,0.04);
+}
+body.theme-white #ds-thread #ds-reset .ds-post-toolbar .ds-post-options .ds-sync label {
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset .ds-post-button {
+    border: 1px solid #777;
+    color: #777;
+    background: #fff;
+}
+body.theme-white #ds-thread #ds-reset .ds-post-button:hover {
+	color: #1abc9c;
+	border-color: #1abc9c;
+	background-color: rgba(24, 188, 156, 0.5);
+}
+body.theme-white #ds-thread #ds-reset .ds-login-buttons a, #ds-thread #ds-reset .ds-login-buttons .ds-more-services {
+    color: #333 !important;
+}
+body.theme-white #ds-thread #ds-reset .ds-textarea-wrapper textarea, #ds-thread #ds-reset .ds-textarea-wrapper .ds-hidden-text {
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset .ds-textarea-wrapper textarea:focus {
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset .ds-comments {
+    background-color: #fff;
+    border-bottom: 3px solid rgba(0,0,0,0.04);
+}
+body.theme-white #ds-thread #ds-reset .ds-comments-info {
+    border-bottom: 2px solid rgba(0,0,0,0.04);
+}
+body.theme-white #ds-thread #ds-reset #ds-hot-posts ul {
+    border-bottom: 3px solid rgba(0,0,0,0.04);
+}
+body.theme-white #ds-thread #ds-reset ul.ds-comments-tabs .ds-highlight {
+    color: #333 !important;
+}
+body.theme-white #ds-thread #ds-reset li.ds-post {
+    border-top: 2px solid rgba(0,0,0,0.04);
+}
+body.theme-white #ds-thread #ds-reset li.ds-post-placeholder {
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset li.ds-tab a.ds-current {
+    color: #333;
+    background: none;
+}
+body.theme-white #ds-thread #ds-reset .ds-sort a.ds-current, #ds-thread #ds-reset .ds-sort a:active {
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset .ds-sort a {
+    color: #555;
+}
+body.theme-white #ds-thread #ds-reset .ds-sort a:hover {
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset .ds-header {
+    color: #333;
+}
+body.theme-white #ds-reset .ds-avatar {
+    background-color: #fff;
+}
+body.theme-white #ds-thread #ds-reset .ds-paginator a {
+    color: #333;
+}
+body.theme-white #ds-thread #ds-reset .ds-paginator a.ds-current {
+    color: #fff;
+}
+body.theme-white #ds-indicator {
+    background: #333 none;
+    color: #fff;
+    border: 1px solid #333;
+}
+body.theme-white #ds-wrapper #ds-reset .ds-dialog-inner {
+    background: #333;
+}
+/* Theme White End */

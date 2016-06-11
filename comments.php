@@ -1,6 +1,7 @@
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php if($this->allow('comment')):?>
     <?php $parsed = parse_url($this->permalink);?>
-    <?php if(strlen($this->options->disqusShortName) > 0):?>
+    <?php if(hasValue($this->options->disqusShortName)):?>
         <div id="comments">
             <span class="widget-title text-center" style="padding-bottom: 15px;">评论列表</span>
             <?php if($this->is('post') || $this->is('page')):?>
@@ -22,7 +23,7 @@
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
         </div>
-    <?php elseif(strlen($this->options->duoshuoShortName) > 0):?>
+    <?php elseif(hasValue($this->options->duoshuoShortName)):?>
         <div id="comments">
             <?php if($this->allow('comment')): ?>
                 <?php
@@ -53,6 +54,7 @@
                     })();
                 </script>
                 <!-- 多说公共JS代码 end -->
+                <link rel="stylesheet" href="<?= STATIC_PATH ?>css/duoshuo.css">
             <?php else: ?>
                 <h4><?php _e('评论已关闭'); ?></h4>
             <?php endif; ?>

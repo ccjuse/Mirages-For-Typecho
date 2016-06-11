@@ -1,3 +1,4 @@
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <style type="text/css">
     /*根据操作系统及浏览器优化font-family*/
 <?php if(isELCapitanOrAbove()): ?>
@@ -212,7 +213,7 @@
     }
 <?php endif?>
 <?php if(shouldEnableBlurFilter()):?>
-    #wrap.display-nav #body {
+    #wrap.display-nav #body, #footer.display-nav {
         -webkit-filter: blur(10px);
         -moz-filter: blur(10px);
         -ms-filter: blur(10px);
@@ -220,7 +221,7 @@
         filter: blur(10px);
     }
 <?php else:?>
-    #wrap.display-nav #body {
+    #wrap.display-nav #body, #footer.display-nav {
         opacity: 0.1;
     }
 <?php endif?>
@@ -427,7 +428,25 @@
         text-align: <?=$this->fields->textAlign?>;
     }
 <?php endif?>
+<?php if(hasValue($this->options->duoshuoShortName)):?>
+    #ds-thread #ds-reset a.ds-user-name[data-user-id='<?=$this->options->duoshuoUserId?>']:after {
+        content: "博主";
+        margin-left: 6px;
+        font-size: 12px;
+        color: #fff;
+        background: rgba(255, 255, 255, .35);
+        border-radius: 4px;
+        padding: 0 3px;
+    }
+    body.theme-white #ds-thread #ds-reset a.ds-user-name[data-user-id='<?=$this->options->duoshuoUserId?>']:after {
+        background: rgba(0, 0, 0, .35);
+    }
+<?php endif?>
+
 <?php
+    if(isset($this->options->css)) {
+        echo $this->options->css;
+    }
     if(isset($this->fields->css)) {
         echo $this->fields->css;
     }

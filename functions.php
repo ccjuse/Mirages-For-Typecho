@@ -1,6 +1,11 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-function themeConfig($form) {
+function themeConfig(Typecho_Widget_Helper_Form $form) {
+
+    $baseTheme = new Typecho_Widget_Helper_Form_Element_Radio('baseTheme', array('0'=>_t('Mirages'), '1'=>_t('Mirages White'),'2'=>_t('Mirages Dark')), '0', _t('主题主色调'),_t('默认为 Mirages'));
+    $form->addInput($baseTheme);
+    $disableAutoNightTheme = new Typecho_Widget_Helper_Form_Element_Radio('disableAutoNightTheme', array('0'=>_t('开启'), '1'=>_t('关闭')), '0', _t('自动夜间模式'),_t('默认为开启'));
+    $form->addInput($disableAutoNightTheme);
     $staticPath = new Typecho_Widget_Helper_Form_Element_Text('staticPath', NULL, NULL, _t('静态文件路径'), _t('除非你需要引用其它域名下的静态文件并且你知道这个设置是什么，否则请留空'));
     $form->addInput($staticPath);
     $defaultBg = new Typecho_Widget_Helper_Form_Element_Text('defaultBg', NULL, NULL, _t('站点背景大图地址'), _t('在这里填入一个图片URL地址, 以在网站显示一个背景大图'));
@@ -15,10 +20,13 @@ function themeConfig($form) {
 
     $duoshuoShortName = new Typecho_Widget_Helper_Form_Element_Text('duoshuoShortName', NULL, NULL, _t('多说 Short Name'), _t('多说评论'));
     $form->addInput($duoshuoShortName);
+    $duoshuoUserId = new Typecho_Widget_Helper_Form_Element_Text('duoshuoUserId', NULL, NULL, _t('多说User Id'), _t('多说 User Id, 用于显示「博主」标签, 不同于「自定义多说Author Id」'));
+    $form->addInput($duoshuoUserId);
     $duoshuoCustomEmbedJs = new Typecho_Widget_Helper_Form_Element_Text('duoshuoCustomEmbedJs', NULL, NULL, _t('自定义多说Embed.js'), _t('自定义多说Embed.js的地址'));
     $form->addInput($duoshuoCustomEmbedJs);
     $duoshuoCustomAuthorId = new Typecho_Widget_Helper_Form_Element_Text('duoshuoCustomAuthorId', NULL, NULL, _t('自定义多说Author Id'), _t('自定义多说Author Id'));
     $form->addInput($duoshuoCustomAuthorId);
+
 
     $adminDir = new Typecho_Widget_Helper_Form_Element_Text('adminDir', NULL, NULL, _t('后台路径'), _t('如果你修改了「__TYPECHO_ADMIN_DIR__」，请在这里填写，否则请留空，默认为「admin」'));
     $form->addInput($adminDir);
@@ -43,6 +51,18 @@ function themeConfig($form) {
         array(), _t('其他选项'));
     $form->addInput($otherOptionsBlock->multiMode());
 }
+
+function hasValue($field) {
+    if (is_numeric($field)) {
+        return true;
+    }
+    return strlen($field) > 0;
+}
+
+function isTrue($field) {
+    return $field > 0 || strtolower($field) == 'true';
+}
+
 /** Device Check */
 function isMobile(){
     return deviceIs('Mobile');

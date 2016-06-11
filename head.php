@@ -1,3 +1,4 @@
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php
 $this->ddb = $this->db;
 @$if_https = $_SERVER['HTTPS'];	//这样就不会有错误提示
@@ -8,9 +9,9 @@ if ($if_https) {	//如果是使用 https 访问的话就添加 https
 }
 
 if (IS_HTTPS) {
-    $highlightJSVersion = "9.2.0";
+    $highlightJSPath = "//cdn.bootcss.com/highlight.js/9.2.0/";
 } else {
-    $highlightJSVersion = "9.1.0";
+    $highlightJSPath = "http://apps.bdimg.com/libs/highlight.js/9.1.0/";
 }
 
 //Add-on highlight language
@@ -29,12 +30,7 @@ foreach ($highlightLanguages as $lang=>$url) {
 
 $addOnHighlightLangHtml = "";
 foreach ($addOnHighlightLang as $url) {
-    if (IS_HTTPS) {
-        $addOnHighlightLangHtml .= '<script src="//cdn.bootcss.com/highlight.js/';
-    } else {
-        $addOnHighlightLangHtml .= '<script src="http://apps.bdimg.com/libs/highlight.js/';
-    }
-    $addOnHighlightLangHtml .=$highlightJSVersion. '/' . $url.'" type="text/javascript"></script>'."\n";
+    $addOnHighlightLangHtml .='<script src="'.$highlightJSPath . $url.'" type="text/javascript"></script>'."\n";
 }
 ?>
 <meta charset="<?php $this->options->charset(); ?>">
@@ -94,6 +90,7 @@ foreach ($addOnHighlightLang as $url) {
     <?php if(IS_HTTPS):?>
     IS_HTTPS = true;
     <?php endif?>
+
     var bg = "<?php
         if($this->is("index")){
             $this->banner = $this->options->defaultBg;
@@ -107,12 +104,11 @@ foreach ($addOnHighlightLang as $url) {
         if (windowHeight > window.screen.availHeight) {
             windowHeight = window.screen.availHeight;
         }
-
-        var bgHeightP = "<?php if(isset($this->fields->bannerHeight)){
-            echo $this->fields->bannerHeight;
-        }else {
-            $this->options->defaultBgHeight();
-        }?>";
+        <?php if(isset($this->fields->bannerHeight)):?>
+        var bgHeightP = "<?=$this->fields->bannerHeight?>";
+        <?php else:?>
+        var bgHeightP = "<?=$this->options->defaultBgHeight?>";
+        <?php endif?>
         bgHeightP = bgHeightP.trim();
         bgHeightP = parseFloat(bgHeightP);
         bgHeightP =  windowHeight * bgHeightP / 100;
@@ -135,41 +131,42 @@ foreach ($addOnHighlightLang as $url) {
 <link rel="stylesheet" href="//cdn.bootcss.com/normalize/3.0.3/normalize.min.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="<?= STATIC_PATH ?>css/base.css">
+
 <?php if(IS_HTTPS): ?>
 <link rel="stylesheet" href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css">
-<link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/<?=$highlightJSVersion?>/styles/tomorrow.min.css">
 <?php else:?>
 <link rel="stylesheet" href="http://apps.bdimg.com/libs/nprogress/0.1.2/nprogress.css">
-<link rel="stylesheet" href="http://apps.bdimg.com/libs/highlight.js/<?=$highlightJSVersion?>/styles/tomorrow.min.css">
+<?php endif?>
+
+<?php if(THEME_CLASS == "theme-dark"):?>
+    <link rel="stylesheet" href="<?=$highlightJSPath?>/styles/tomorrow-night-eighties.min.css">
+<?php else:?>
+    <link rel="stylesheet" href="<?=$highlightJSPath?>/styles/tomorrow.min.css">
+<?php endif?>
+<?php if($this->options->disableAutoNightTheme <= 0 && !hasValue($this->options->disqusShortName) && THEME_CLASS != "theme-dark"):?>
+    <script>
+        var hour = new Date().getHours();
+        var USE_MIRAGES_DARK = false;
+        if (hour <= 5 || hour >= 22) {
+            USE_MIRAGES_DARK = true;
+            injectStyle("<?=$highlightJSPath?>/styles/tomorrow-night-eighties.min.css");
+        }
+    </script>
 <?php endif?>
 <link rel="stylesheet" href="<?= STATIC_PATH ?>css/theme.css">
-<script>
-    var hour = new Date().getHours();
-    if (hour <= 5 || hour >= 22) {
-        injectStyle(BASE_SCRIPT_URL + "css/theme-night.css");
-        if (IS_HTTPS) {
-            injectStyle("//cdn.bootcss.com/highlight.js/<?=$highlightJSVersion?>/styles/tomorrow-night-eighties.min.css");
-        } else {
-            injectStyle("http://apps.bdimg.com/libs/highlight.js/<?=$highlightJSVersion?>/styles/tomorrow-night-eighties.min.css");
-        }
-    }else if (hour >= 18 || hour <= 7) {
-//        injectStyle(BASE_SCRIPT_URL + "css/theme-sunset.css");
-    }
-</script>
 <?php if (strlen($this->options->shortcutIcon) > 5): ?>
 <link rel="shortcut icon" href="<?php $this->options->shortcutIcon(); ?>">
 <?php else:?>
 <link rel="shortcut icon" href="<?php $this->options->siteUrl(); ?>favicon.ico">
 <?php endif?>
 
+<script src="<?=$highlightJSPath?>/highlight.min.js" type="text/javascript"></script>
 <?php if(IS_HTTPS): ?>
 <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js" type="text/javascript"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js" type="text/javascript"></script>
-<script src="//cdn.bootcss.com/highlight.js/<?=$highlightJSVersion?>/highlight.min.js" type="text/javascript"></script>
 <?php else:?>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
 <script src="http://apps.bdimg.com/libs/nprogress/0.1.2/nprogress.js" type="text/javascript"></script>
-<script src="http://apps.bdimg.com/libs/highlight.js/<?=$highlightJSVersion?>/highlight.min.js" type="text/javascript"></script>
 <?php endif?>
 <?=$addOnHighlightLangHtml; ?>
 

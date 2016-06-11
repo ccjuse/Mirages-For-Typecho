@@ -4,13 +4,13 @@
  * 
  * @package Mirages
  * @author Hran
- * @version 1.1.1
+ * @version 1.2.0
  * @link http://hran.me
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
- $this->need('header.php');
- ?>
+$this->need('header.php');
+?>
 <div id="index" role="main">
 	<?php while($this->next()): ?>
         <article  itemscope itemtype="http://schema.org/BlogPosting">
